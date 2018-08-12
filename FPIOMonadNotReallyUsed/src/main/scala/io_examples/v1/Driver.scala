@@ -8,14 +8,12 @@ import scala.util.{Failure, Success, Try}
   */
 object Driver extends App {
 
-    // intentionally use an invalid filename
-    val passwdFile: Try[String] = FileUtils.readTextFileAsString("/etc/passwdFoo")
+  // intentionally use an invalid filename
+  val passwdFile: Try[String] = FileUtils.readTextFileAsString("/etc/passwdFoo")
 
-    passwdFile match {
-        case Success(s) => println(s)
-        case Failure(e) => println(e)
-    }
+  passwdFile match {
+    case Success(s) => println(s)
+    case Failure(e) => println(e)
+  }
 
 }
-
-

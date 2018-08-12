@@ -4,12 +4,10 @@ import javax.swing.SwingUtilities
 
 object SwingUtils {
 
-    def invokeLater(callback: => Unit) {
-        SwingUtilities.invokeLater(() => {
-            callback
-        })
-    }
+  def invokeLater(callback: => Unit) {
+    SwingUtilities.invokeLater(() => {
+      callback
+    })
+  }
 
 }
-
-

@@ -9,8 +9,8 @@ import com.alspizza.pos.model.{CrustSize, CrustType, Topping}
   */
 trait PizzaDaoInterface {
 
-    def getToppingPrices(): Map[Topping, Money]
-    def getCrustSizePrices(): Map[CrustSize, Money]
-    def getCrustTypePrices(): Map[CrustType, Money]
+  def getToppingPrices(): Map[Topping, Money]
+  def getCrustSizePrices(): Map[CrustSize, Money]
+  def getCrustTypePrices(): Map[CrustType, Money]
 
 }

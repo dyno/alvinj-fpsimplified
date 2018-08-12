@@ -2,6 +2,6 @@ package com
 
 package object alspizza {
 
-    type Money = BigDecimal
+  type Money = BigDecimal
 
 }

@@ -15,54 +15,52 @@ import scala.util.{Failure, Success}
   */
 object V1ExceptionsAndFutures extends App {
 
-    val startTime = currentTime
+  val startTime = currentTime
 
-    val f1 = Future {
-        sleep(2000)
-        1
+  val f1 = Future {
+    sleep(2000)
+    1
+  }
+  val f2 = Future {
+    sleep(550)
+    throw new Exception("Ka-boom!") //EXCEPTION
+    2
+  }
+  val f3 = Future {
+    sleep(800)
+    3
+  }
+
+  val result = for {
+    r2 <- f2
+    r1 <- f1
+    r3 <- f3
+  } yield (r1 + r2 + r3)
+
+  result.onComplete {
+    case Success(x) => {
+      // the code won't come here
+      val finishTime = currentTime
+      val delta      = finishTime - startTime
+      System.err.println(s"delta = $delta")
+      println(s"\nresult = $x")
     }
-    val f2 = Future {
-        sleep(550)
-        throw new Exception("Ka-boom!")   //EXCEPTION
-        2
+    case Failure(e) => {
+      // the code comes here because of the intentional exception
+      val finishTime = currentTime
+      val delta      = finishTime - startTime
+      System.err.println("Failure happened!")
+      System.err.println(s"delta in Failure = $delta")
+      // just a short message; i don't care about the full exception
+      System.err.println(e.getMessage)
     }
-    val f3 = Future {
-        sleep(800)
-        3
-    }
+  }
 
-    val result = for {
-        r2 <- f2
-        r1 <- f1
-        r3 <- f3
-    } yield (r1 + r2 + r3)
+  // important for a little parallel demo: keep the main thread of the
+  // jvm alive
+  sleep(4000)
 
-    result.onComplete {
-        case Success(x) => {
-            // the code won't come here
-            val finishTime = currentTime
-            val delta = finishTime - startTime
-            System.err.println(s"delta = $delta")
-            println(s"\nresult = $x")
-        }
-        case Failure(e) => {
-            // the code comes here because of the intentional exception
-            val finishTime = currentTime
-            val delta = finishTime - startTime
-            System.err.println("Failure happened!")
-            System.err.println(s"delta in Failure = $delta")
-            // just a short message; i don't care about the full exception
-            System.err.println(e.getMessage)
-        }
-    }
-
-    // important for a little parallel demo: keep the main thread of the
-    // jvm alive
-    sleep(4000)
-
-    def sleep(time: Long) = Thread.sleep(time)
-    def currentTime = System.currentTimeMillis()
+  def sleep(time: Long) = Thread.sleep(time)
+  def currentTime       = System.currentTimeMillis()
 
 }
-
-

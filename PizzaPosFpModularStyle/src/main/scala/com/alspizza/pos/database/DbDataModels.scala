@@ -16,4 +16,3 @@ import com.alspizza.pos.model.{CrustSize, CrustType, Topping}
 //    crustSize: CrustSize,
 //    price: BigDecimal
 //)
-

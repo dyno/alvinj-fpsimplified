@@ -4,6 +4,6 @@ import scala.util.Try
 
 package object v2 {
 
-    type IO[A] = Try[A]
+  type IO[A] = Try[A]
 
 }

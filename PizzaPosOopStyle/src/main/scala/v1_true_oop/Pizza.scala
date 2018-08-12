@@ -8,40 +8,37 @@ import scala.collection.mutable.ArrayBuffer
   */
 class Pizza {
 
-    type Money = BigDecimal
+  type Money = BigDecimal
 
-    // private fields
-    private var _crustSize: CrustSize = MediumCrustSize
-    private var _crustType: CrustType = RegularCrustType
-    private val _toppings = ArrayBuffer[Topping]()
+  // private fields
+  private var _crustSize: CrustSize = MediumCrustSize
+  private var _crustType: CrustType = RegularCrustType
+  private val _toppings             = ArrayBuffer[Topping]()
 
-    def getCrustSize = _crustSize
-    def setCrustSize(cs: CrustSize) {
-        _crustSize = cs
-    }
+  def getCrustSize = _crustSize
+  def setCrustSize(cs: CrustSize) {
+    _crustSize = cs
+  }
 
-    def getCrustType = _crustType
-    def setCrustType(ct: CrustType) {
-        _crustType = ct
-    }
+  def getCrustType = _crustType
+  def setCrustType(ct: CrustType) {
+    _crustType = ct
+  }
 
-    def getToppings = _toppings
-    def addTopping(t: Topping) {
-        _toppings += t
-    }
+  def getToppings = _toppings
+  def addTopping(t: Topping) {
+    _toppings += t
+  }
 
-    // other built-in methods
-    def removeTopping(t: Topping) {
-        _toppings -= t
-    }
+  // other built-in methods
+  def removeTopping(t: Topping) {
+    _toppings -= t
+  }
 
-    def removeAllToppings() {
-        _toppings.clear()
-    }
+  def removeAllToppings() {
+    _toppings.clear()
+  }
 
-    def getPrice(): Money = ???
+  def getPrice(): Money = ???
 
 }
-
-
-

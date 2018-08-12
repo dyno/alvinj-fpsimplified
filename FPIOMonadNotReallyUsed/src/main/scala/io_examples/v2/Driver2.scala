@@ -9,18 +9,18 @@ import scala.util.{Failure, Success}
   *
   * This example calls `readTextFileAsString`, which
   * returns the type, `IO[String]` (thanks to that type alias).
- */
+  */
 object Driver2 extends App {
 
-    // intentionally use an invalid filename
-    val passwdFile: IO[String] = FileUtils2.readTextFileAsString("/etc/passwdFoo")
+  // intentionally use an invalid filename
+  val passwdFile: IO[String] = FileUtils2.readTextFileAsString("/etc/passwdFoo")
 
-    passwdFile match {
-        case Success(s) => println(s)
-        case Failure(e) => {
-            val msg = MiscUtils.getFullStackTrace(e)
-            println(msg)
-        }
+  passwdFile match {
+    case Success(s) => println(s)
+    case Failure(e) => {
+      val msg = MiscUtils.getFullStackTrace(e)
+      println(msg)
     }
+  }
 
 }
