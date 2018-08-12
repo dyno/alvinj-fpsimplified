@@ -9,9 +9,7 @@ object Dependencies {
   lazy val catsEffectVersion             = "1.0.0-RC2" // https://github.com/typelevel/cats-effect
   lazy val finagleVersion                = "18.8.0"    // https://twitter.github.io/finagle/guide/Quickstart.html
   lazy val monocleVersion                = "1.5.0"     // http://julien-truffaut.github.io/Monocle/
-  lazy val paradiseVersion               = "2.1.0"     // https://docs.scala-lang.org/overviews/macros/paradise.html
   lazy val quicklensVersion              = "1.4.11"    // https://github.com/adamw/quicklens
-  lazy val sauronVersion                 = "1.1.0"     // https://github.com/pathikrit/sauron
   lazy val scalaCheckVersion             = "1.14.0"    // https://www.scalacheck.org/
   lazy val scalaParserCombinatorsVersion = "1.1.1"     // https://github.com/scala/scala-parser-combinators
   lazy val scalaTestVersion              = "3.0.5"     // http://www.scalatest.org/
@@ -34,7 +32,6 @@ object Dependencies {
   val monocleLaw              = "com.github.julien-truffaut" %% "monocle-law"               % monocleVersion % "test"
   val monocleMacro            = "com.github.julien-truffaut" %% "monocle-macro"             % monocleVersion
   val monocleState            = "com.github.julien-truffaut" %% "monocle-state"             % monocleVersion
-  val paradise                = "org.scalamacros"            % "paradise"                   % paradiseVersion
   val quicklens               = "com.softwaremill.quicklens" %% "quicklens"                 % quicklensVersion
   val scalaCheck              = "org.scalacheck"             %% "scalacheck"                % scalaCheckVersion % "test"
   val scalaParserCombinators  = "org.scala-lang.modules"     %% "scala-parser-combinators"  % scalaParserCombinatorsVersion

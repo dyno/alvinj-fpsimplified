@@ -31,7 +31,6 @@ lazy val PizzaPosOopStyle           = project
 lazy val RecursiveSum               = project
 lazy val StateMonadExample          = project
 lazy val TailRecursiveSum           = project
-lazy val koffioLenses               = (project in file("koffio_lenses"))
 
 /**
   * Reference:
