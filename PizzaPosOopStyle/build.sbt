@@ -1,2 +1,2 @@
-name := "PizzaPOS_OOP"
+name := "PizzaPosOopStyle"
 version := "1.0"

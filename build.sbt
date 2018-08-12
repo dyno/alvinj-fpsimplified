@@ -1,5 +1,3 @@
-import Dependencies._
-
 name := "alvinj-fpsimplified"
 
 lazy val commonSettings =

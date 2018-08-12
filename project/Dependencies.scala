@@ -36,27 +36,18 @@ object Dependencies {
   val monocleState            = "com.github.julien-truffaut" %% "monocle-state"             % monocleVersion
   val paradise                = "org.scalamacros"            % "paradise"                   % paradiseVersion
   val quicklens               = "com.softwaremill.quicklens" %% "quicklens"                 % quicklensVersion
-  val sauron                  = "com.github.pathikrit"       %% "sauron"                    % sauronVersion
   val scalaCheck              = "org.scalacheck"             %% "scalacheck"                % scalaCheckVersion % "test"
   val scalaParserCombinators  = "org.scala-lang.modules"     %% "scala-parser-combinators"  % scalaParserCombinatorsVersion
   val scalaTest               = "org.scalatest"              %% "scalatest"                 % scalaTestVersion % "test"
   val scalactic               = "org.scalactic"              %% "scalactic"                 % scalacticVersion % "test"
   val scalazConcurrent        = "org.scalaz"                 %% "scalaz-concurrent"         % scalazVersion
   val scalazCore              = "org.scalaz"                 %% "scalaz-core"               % scalazVersion
-  val scalazLens              = "org.scalaz"                 %% "scalaz-lens"               % scalazVersion
   val scalazScalaCheckBinding = "org.scalaz"                 %% "scalaz-scalacheck-binding" % scalazVersion % "test"
   val scalazSpecs2            = "org.typelevel"              %% "scalaz-specs2"             % specs2Version % "test"
-  val scalazTask              = "org.scalaz"                 %% "scalaz-task"               % scalazVersion
 
   // Dependency group
-  val akkaDeps = Seq(akkaActor, akkaRemote, akkaTestKit)
-  val scalazDeps = Seq(
-      scalazCore,
-      scalazConcurrent,
-      scalazScalaCheckBinding,
-      scalazTask,
-      scalazSpecs2
-  )
+  val akkaDeps   = Seq(akkaActor, akkaRemote, akkaTestKit)
+  val scalazDeps = Seq(scalazCore, scalazConcurrent, scalazScalaCheckBinding, scalazSpecs2)
 
 }
 

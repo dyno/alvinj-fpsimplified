@@ -1,2 +1,2 @@
-name := "TypeClasses"
+name := "FPTypeClasses"
 version := "1.0"

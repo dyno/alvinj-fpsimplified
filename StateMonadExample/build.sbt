@@ -1,2 +1,2 @@
-name := "StateMonad"
+name := "StateMonadExample"
 version := "1.0"

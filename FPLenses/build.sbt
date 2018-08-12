@@ -1,4 +1,4 @@
-name := "TypeClasses"
+name := "FPLenses"
 version := "1.0"
 
 import Dependencies.quicklens

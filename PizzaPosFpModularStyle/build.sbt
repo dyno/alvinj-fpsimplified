@@ -1,2 +1,2 @@
-name := "PizzaPOS_FP"
+name := "PizzaPosFpModularStyle"
 version := "1.0"

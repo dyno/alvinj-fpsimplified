@@ -1,2 +1,2 @@
-name := "FPCoinFlip"
+name := "FPCoinFlipGame"
 version := "1.0"

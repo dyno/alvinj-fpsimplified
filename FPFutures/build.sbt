@@ -1,4 +1,4 @@
-name := "Futures"
+name := "FPFutures"
 version := "1.0"
 
 import Dependencies.{apacheCommonsLang, apacheHttpClient}
