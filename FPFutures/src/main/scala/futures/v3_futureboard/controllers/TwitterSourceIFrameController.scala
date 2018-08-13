@@ -9,8 +9,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
 
-class TwitterSourceIFrameController(twitterSource: TwitterSource)
-    extends IFrameControllerInterface {
+class TwitterSourceIFrameController(twitterSource: TwitterSource) extends IFrameControllerInterface {
 
   val iFrame = new JInternalFrame(twitterSource.title, true, true, true, true)
 

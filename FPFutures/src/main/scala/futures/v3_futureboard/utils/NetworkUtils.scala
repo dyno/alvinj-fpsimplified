@@ -1,9 +1,8 @@
 package futures.v3_futureboard.utils
 
+import org.apache.http.client.config.RequestConfig
 import org.apache.http.client.methods.HttpGet
-import org.apache.http.impl.client.DefaultHttpClient
-import org.apache.http.params.HttpConnectionParams
-
+import org.apache.http.impl.client.{CloseableHttpClient, HttpClientBuilder}
 import scala.util.Try
 
 object NetworkUtils {
@@ -35,7 +34,7 @@ object NetworkUtils {
       content = io.Source.fromInputStream(inputStream).getLines.mkString
       inputStream.close
     }
-    httpClient.getConnectionManager.shutdown
+    httpClient.close()
     content
   }
 
@@ -60,18 +59,22 @@ object NetworkUtils {
         content = io.Source.fromInputStream(inputStream).getLines.mkString
         inputStream.close
       }
-      httpClient.getConnectionManager.shutdown
+      httpClient.close()
       content
     }
 
   // TODO update code to use HttpClientBuilder instead of DefaultHttpClient
-  private def buildHttpClient(connectionTimeout: Int, socketTimeout: Int): DefaultHttpClient = {
-    val httpClient = new DefaultHttpClient
-    val httpParams = httpClient.getParams
-    HttpConnectionParams.setConnectionTimeout(httpParams, connectionTimeout)
-    HttpConnectionParams.setSoTimeout(httpParams, socketTimeout)
-    httpClient.setParams(httpParams)
-    httpClient
+  private def buildHttpClient(connectionTimeout: Int, socketTimeout: Int): CloseableHttpClient = {
+    val requestConfig = RequestConfig
+      .custom()
+      .setSocketTimeout(socketTimeout)
+      .setConnectTimeout(connectionTimeout)
+      .build()
+
+    HttpClientBuilder
+      .create()
+      .setDefaultRequestConfig(requestConfig)
+      .build()
   }
 
 }
