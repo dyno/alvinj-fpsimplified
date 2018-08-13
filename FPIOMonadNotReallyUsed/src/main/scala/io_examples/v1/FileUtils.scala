@@ -3,6 +3,7 @@ package io_examples.v1
 import java.io.File
 import io_examples.common.Control.using
 import scala.util.Try
+import scala.io
 
 /**
   * All of these methods return instances of `Try`.
@@ -11,8 +12,7 @@ object FileUtils {
 
   def readTextFileAsString(filename: String): Try[String] =
     Try {
-      val lines = using(io.Source.fromFile(filename)) { source =>
-        (for (line <- source.getLines) yield line).toList
+      val lines = using(io.Source.fromFile(filename)) { source => (for (line <- source.getLines) yield line).toList
       }
       lines.mkString("\n")
     }

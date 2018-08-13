@@ -1,7 +1,8 @@
 package io_examples.v2
 
-import java.io.File
 import io_examples.common.Control.using
+import java.io.File
+import scala.io
 import scala.util.Try
 
 /**
@@ -12,8 +13,7 @@ object FileUtils2 {
 
   def readTextFileAsString(filename: String): IO[String] =
     Try {
-      val lines = using(io.Source.fromFile(filename)) { source =>
-        (for (line <- source.getLines) yield line).toList
+      val lines = using(io.Source.fromFile(filename)) { source => (for (line <- source.getLines) yield line).toList
       }
       lines.mkString("\n")
     }
