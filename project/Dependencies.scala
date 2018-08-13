@@ -51,4 +51,5 @@ object Dependencies {
 /**
   * Reference:
   *   https://stackoverflow.com/questions/17461453/build-scala-and-symbols-meaning
+  *   https://www.scala-sbt.org/1.x/docs/Library-Dependencies.html
   */
