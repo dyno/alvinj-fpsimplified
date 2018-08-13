@@ -54,9 +54,7 @@ object CoinFlip1 extends App {
     }
   }
 
-  private def handleCoinFlip(gameState: GameState,
-                             newNumFlips: Int,
-                             coinTossResult: String): GameState = {
+  private def handleCoinFlip(gameState: GameState, newNumFlips: Int, coinTossResult: String): GameState = {
     val newNumCorrect = gameState.numCorrect + 1
     val newGameState  = gameState.copy(numFlips = newNumFlips, numCorrect = newNumCorrect)
     newGameState
