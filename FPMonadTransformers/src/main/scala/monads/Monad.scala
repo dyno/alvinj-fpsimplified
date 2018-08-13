@@ -1,5 +1,7 @@
 package monads
 
+import scala.language.higherKinds
+
 trait Monad[M[_]] {
 
   // FP’ers prefer to call this `point`
